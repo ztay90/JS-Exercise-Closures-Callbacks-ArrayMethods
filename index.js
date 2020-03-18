@@ -167,7 +167,11 @@ function processDuplicateFree(/* CODE HERE ONLY AFTER COMPLETING ALL OTHER TASKS
  * [2] Invoking `lowerCaseStrings` with `['a', 'b', 'c' ]` will return `[ 'a', 'b', 'c' ]`.
 */
 function lowerCaseStrings(strings) {
-  return strings.forEach(strings => strings.toLowerCase())
+  const lower = [];
+  strings.forEach(arrItem => {
+    lower.push(arrItem.toLowerCase())
+  });
+    return lower;
 }
 
 
@@ -234,9 +238,10 @@ function removeApple(strings) {
  * [2] Invoking `stringSmash` with `['a', 'b', 'c' ]` will return `abc`.
 */
 function stringSmash(strings) {
-  strings.reduce(strings => {
-    return strings.concat()
-  })
+  const smash = strings.reduce((accm, touch) => {
+    return accm + touch;
+  });
+  return smash
 }
 
 // A local community center is holding a fund raising 5k fun run and has invited
@@ -254,8 +259,11 @@ function stringSmash(strings) {
  * @returns an array with all the runners' full names in the following format: "Smith, John".
  * The full names appear in the array in the same order the runners appear in the `runners` array.
 */
-function getFullNames(/* CODE HERE */) {
-  /* CODE HERE */
+function getFullNames(runners) {
+  const fullName = runners.map(item => {
+    return `${item.last_name}, ${item.first_name}`
+  });
+  return fullName;
 }
 
 /**
@@ -270,8 +278,11 @@ function getFullNames(/* CODE HERE */) {
  * @returns an array with all the runners' first names in ALL CAPS.
  * The first names appear in the array in the same order the runners appear in the `runners` array.
 */
-function firstNamesAllCaps(/* CODE HERE */) {
-  /* CODE HERE */
+function firstNamesAllCaps(runners) {
+  const caps = runners.map(item => {
+    return item.first_name.toUpperCase();
+  });
+  return caps
 }
 
 /**
@@ -317,9 +328,9 @@ function tallyUpDonations(/* CODE HERE */) {
  * Study the code for counter1 and counter2. Answer the questions below.
  * 
  * 1. What is the difference between counter1 and counter2?
- * 
+ *  Counter 1 is a local scope and Counter to is a global scope
  * 2. Which of the two uses a closure? How can you tell?
- * 
+ * Counter 2 because it reaches outside its scope to find count because it doesnt exist inside of the Counter2 function.
  * 3. In what scenario would the counter1 code be preferable? In what scenario would counter2 be better? 
  *
 */
