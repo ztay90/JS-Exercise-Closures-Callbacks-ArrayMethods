@@ -328,10 +328,11 @@ function tallyUpDonations(/* CODE HERE */) {
  * Study the code for counter1 and counter2. Answer the questions below.
  * 
  * 1. What is the difference between counter1 and counter2?
- *  Counter 1 is a local scope and Counter to is a global scope
+ *  Counter 1 is a local scope and Counter 2 is a global scope
  * 2. Which of the two uses a closure? How can you tell?
- * Counter 2 because it reaches outside its scope to find count because it doesnt exist inside of the Counter2 function.
+ *  Counter 2 because it reaches outside its scope to find count because it doesnt exist inside of the Counter2 function.
  * 3. In what scenario would the counter1 code be preferable? In what scenario would counter2 be better? 
+ *  counter 1 used when you just need to access variable inside the scope and counter 2 is used when the variable needs to be used in multiple locations globaly.
  *
 */
 
